@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbiqueilaVaz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/Favicon Abiqueila.png" type="image/x-icon">
+</head>
+
+
+
+
+<body>
+    <header id="#home">
+
+        <div class="container-grid">
+            <img src="img/LogoWhiteVaz.png" alt="Logo da empresa Abiqueila Vaz">
+            <nav class="menu">
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#cases">Cases de Sucesso</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#contato">Contate-Nos</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <section>
+        <div class="slideshow-container">
+
+            <div class="slideshow fade">
+                <img src="img/Fundo1Ab.png" alt="sobre-nos">
+                <div class="legenda">
+                    <span>Sobre Abiqueila Vaz</span>
+                    <p>Quem somos, nossa história, valores...</p>
+                    <a href="#sobre">Veja Mais</a>
+                </div>
+            </div>
+
+            <div class="slideshow fade">
+                <img src="img/Fundo2Ab.png" alt="cases">
+                <div class="legenda">
+                    <span>Serviços e Portfólios</span>
+                    <p>Algums de nossos serviços e feedbacks dos nossos clientes</p>
+                    <a href="#cases">Veja Mais</a>
+                </div>
+            </div>
+
+            <div class="slideshow fade">
+                <img src="img/Fundo3Ab.png" alt="portfolio">
+                <div class="legenda">
+                    <span>Produtos</span>
+                    <p>Conheça nossa coleção de produtos</p>
+                    <a href="#produtos">Veja Mais</a>
+                </div>
+            </div>
+
+            <div class="slideshow fade">
+                <img src="img/Fundo4Ab.png" alt="contate-nos">
+                <div class="legenda">
+                    <span>Contate-Nos</span>
+                    <p>Preencha o formulário ou entre em contato conosco para fazer um orçamento</p>
+                    <a href="#contato">Veja Mais</a>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+
+            <div class="paginacao">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            let slides = document.querySelectorAll('.slideshow', '.clientes');
+            let dots = document.querySelectorAll('.dot');
+            let slideIndex = 1;
+            let timeoutID;
+
+            const showSlides = (n) => {
+                let i;
+
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                for (i = 0; i < slides.length; i++) {
+                    dots[i].setAttribute('class', 'dot');
+                }
+
+
+                slides[slideIndex - 1].style.display = 'block';
+                dots[slideIndex - 1].setAttribute('class', 'dot ativo');
+                clearTimeout(timeoutID);
+                timeoutID = setTimeout(autoSlides, 4000);
+            };
+
+            const plusSlides = (n) => {
+                showSlides(slideIndex += n);
+            };
+
+            const currentSlide = (n) => {
+                showSlides(slideIndex = n);
+            };
+
+            function autoSlides() {
+                let i;
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+
+                for (i = 0; i < slides.length; i++) {
+                    dots[i].setAttribute('class', 'dot');
+                }
+
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].setAttribute('class', 'dot ativo');
+                timeoutID = setTimeout(autoSlides, 7000);
+            }
+
+            autoSlides();
+        </script>
+    </section>
+
+    <section id="sobre">
+        <div class="blocos-menu">
+            <div class="block1">
+                <button>
+                    <p>Sobre Nós</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="container-sobres">
+            <img src="img/SvgMissão.png" alt="SVG sobre as missões">
+            <p>Na essência do nosso salão de beleza, nossa missão é simples: capacitar a beleza interior e exterior de
+                cada cliente, proporcionando uma experiência excepcional que vai além das expectativas.
+                Nossos valores fundamentais nos orientam em cada interação e serviço que oferecemos, como excelência,
+                hospitalidade,inovação e integridade, além também de buscar o melhor bem-estar e qualidade a todos os
+                clientes.</p>
+        </div>
+    </section>
+
+    <section id="cases">
+        <div class="menuzao1">
+            <p>Serviços e Cases</p>
+        </div>
+
+        <div class="container-cards-l1">
+            <div class="card1">
+                <img src="img/CortesFoto.png" alt="Cortes">
+                <p>Cortes femininos</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+agendar+um+corte."><button>Agendar</button></a>
+            </div>
+
+            <div class="card2">
+                <img src="img/Escova.png" alt="Escova">
+                <p>Escova</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+escova%C3%A7%C3%A3o+de+meu+cabelo"><button>Agendar</button></a>
+            </div>
+
+            <div class="card3">
+                <img src="img/Progressiva.png" alt="Progressiva">.
+                <p>Botox e Selagem</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+progressiva."><button>Agendar</button></a>
+            </div>
+        </div>
+        <div class="container-cards-l2">
+
+            <div class="card4">
+                <img src="img/Botox e Selagem.png" alt="Botox e selagem">
+                <p>Botox e Selagem</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+fzer+um+agendamento+de+botox+e+selagem."><button>Agendar</button></a>
+            </div>
+
+            <div class="card5">
+                <img src="img/ColoraçãoFoto.png" alt="Coloração">
+                <p>Coloração</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+agendar+uma+colora%C3%A7%C3%A3o."><button>Agendar</button></a>
+            </div>
+
+            <div class="card6">
+                <img src="img/Cauterização.png" alt="Cauterização">
+                <p>Cauterização</p>
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+fazer+um+agendamento+de+uma+cauteriza%C3%A7%C3%A3o."><button>Agendar</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedbacks">
+        <h2>Aproveite e confira um pouco abaixo os <span>Feedbacks</span> de nosso clientes e nossos <span> Portfólios
+            </span></h2>
+        <div class="feedback1">
+            <img src="img/Feedback1.png" alt="">
+        </div>
+
+        <div class="feedback2">
+            <img src="img/Feedback2.png" alt="">
+        </div>
+
+        <div class="feedback3">
+            <img src="img/Feedback3.png" alt="">
+        </div>
+        </div>
+
+        <div class="portfolio">
+            <button><svg width="80px" height="80px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#AC0110" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <a href="https://www.instagram.com/vazabiqueilahair?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Clique aqui para acessar nossos portfólios</a>
+            </button>
+        </div>
+    </section>
+
+
+    <section id="produtos">
+        <div class="menuzao2">
+            <p>Conheça nossos produtos</p>
+        </div>
+
+        <div class="container-prods-l1">
+            <div class="prod1">
+                <img src="img/Prod1.png" alt="Produto1">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Liso+Natural+de+Quiabo"><button>Encomendar</button></a>
+            </div>
+
+            <div class="prod2">
+                <img src="img/Prod2.png" alt="Produto2">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+P%C3%B3s+Qu%C3%ADmica+3+em+1"><button>Encomendar</button></a>
+            </div>
+
+            <div class="prod3">
+                <img src="img/Prod3.png" alt="Produto3">.
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Biotina+Crescimento+e+For%C3%A7a"><button>Encomendar</button></a>
+            </div>
+        </div>
+        <div class="container-prods-l2">
+
+            <div class="prod4">
+                <img src="img/Prod4.png" alt="Produto4">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+%C3%93leo+de+Cambre"><button>Encomendar</button></a>
+            </div>
+
+            <div class="prod5">
+                <img src="img/Prod5.png" alt="Produto5">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Cresce+Muito"><button>Encomendar</button></a>
+            </div>
+
+            <div class="prod6">
+                <img src="img/Prod6.png" alt="Cauterização">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Ultra+Bond"><button>Encomendar</button></a>
+            </div>
+        </div>
+        <div class="container-prods-l3">
+            <div class="prod7">
+                <img src="img/Prod7.png" alt="Produto7">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Curly+Hair"><button>Encomendar</button></a>
+            </div>
+            <div class="prod8">
+                <img src="img/Prod8.png" alt="Produto8">
+
+                <a
+                    href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+estou+interessado+em+um+Fortalecimento+%2B+Prolonga%C3%A7%C3%A3o"><button>Encomendar</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="menuzao3">
+            <p>Contate-Nos</p>
+        </div>
+        
+        <h2>Para dúvidas ou mais informações sobre orçamentos, serviços e entre outros, enrte em contato conosco ou
+                preencha o formulário abaixo, que estraremos em contato.</h2>
+    
+            <form>
+                <div class="campo">
+                    <label for="campo-nome">Nome</label>
+                    <input id="campo-nome" placeholder="Digite o seu nome" type="text">
+                </div>
+    
+                <div class="campo">
+                    <label for="campo-email">Celular?</label>
+                    <input id="campo-email" placeholder="Digite o seu celular" type="email">
+                </div>
+    
+                <div class="campo">
+                    <label for="campo-email">Email (Em que podemos entrar em contato)</label>
+                    <input id="campo-email" placeholder="Digite o seu email" type="email">
+                </div>
+    
+                <div class="campo-descricao">
+                    <label for="">Deixe aqui seu feedback ou uma mensagem</label>
+                    <textarea placeholder="Deixe aqui seu feedback ou uma mensagem" id="campo-texto" cols="30"
+                        rows="10"></textarea>
+                </div>
+    
+                <button type="submit">Enviar</button>
+            </form>
+    </section>
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <h1>Abiqueila Vaz Hair</h1>
+                <p>Entre em contato.</p>
+
+                <div id="footer_social_media">
+                    <a href="https://www.instagram.com/vazabiqueilahair?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="footer-link" id="instagram">
+                        <svg width="70px" height="70px" viewBox="0 0 32.00 32.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)"></rect> <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)"></rect> <path d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z" fill="white"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z" fill="white"></path> <defs> <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"> <stop stop-color="#B13589"></stop> <stop offset="0.79309" stop-color="#C62F94"></stop> <stop offset="1" stop-color="#8A3AC8"></stop> </radialGradient> <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"> <stop stop-color="#E0E8B7"></stop> <stop offset="0.444662" stop-color="#FB8A2E"></stop> <stop offset="0.71474" stop-color="#E2425C"></stop> <stop offset="1" stop-color="#E2425C" stop-opacity="0"></stop> </radialGradient> <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"> <stop offset="0.156701" stop-color="#406ADC"></stop> <stop offset="0.467799" stop-color="#6A45BE"></stop> <stop offset="1" stop-color="#6A45BE" stop-opacity="0"></stop> </radialGradient> </defs> </g></svg>
+                    </a>
+
+                   
+                    
+
+                    <a href="https://wa.me/5511986199862?text=Ol%C3%A1%2C+gostaria+de+agendar+uma+escova%C3%A7%C3%A3o+de+meu+cabelo" class="footer-link" id="whatsapp">
+                        <svg width="70px" height="70px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <path id="a" d="M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z"></path> </defs> <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="512.001" y1=".978" x2="512.001" y2="1025.023"> <stop offset="0" stop-color="#61fd7d"></stop> <stop offset="1" stop-color="#2bb826"></stop> </linearGradient> <use xlink:href="#a" overflow="visible" fill="url(#b)"></use> <g> <path fill="#FFF" d="M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z"></path> </g> </g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <ul class="footer-list">
+                <li>
+                    <h3>Home</h3>
+                </li>
+                <li>
+                    <a href="#sobre" class="footer-link">Sobre</a>
+                </li>
+                <li>
+                    <a href="#cases" class="footer-link">Cases</a>
+                </li>
+                <li>
+                    <a href="contato.html" class="footer-link">Contato</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3>Produtos</h3>
+                </li>
+                <li>
+                    <a href="#produtos" class="footer-link">Encomendar</a>
+                </li>
+                
+                <li>
+                    <a href="#home" class="footer-link">Home</a>
+                </li>
+            </ul>
+
+            <div id="footer_subscribe">
+                <h3>Fique conectado!</h3>
+
+                <p>
+                    Insira seu e-mail e receba avisos sobre as novidades!
+                </p>
+
+                <div id="input_group">
+                    <input type="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer_copyright">
+            &#169
+            2024 todos os direitos reservados Abiqueila Vaz
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
